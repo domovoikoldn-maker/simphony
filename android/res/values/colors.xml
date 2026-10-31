@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#FF121216</color>
+    <color name="panel">#FF1C1C22</color>
+    <color name="panel_line">#FF2C2C35</color>
+    <color name="text">#FFEDEAF2</color>
+    <color name="dim">#FF8D8A99</color>
+    <color name="accent">#FFE8B04B</color>
+    <color name="rec">#FFE5484D</color>
+    <color name="icon_bg">#FF16131D</color>
+    <color name="track1">#FFE8B04B</color>
+    <color name="track2">#FF5EB3F0</color>
+    <color name="track3">#FF7BD389</color>
+    <color name="track4">#FFC98BEF</color>
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Дорожка: главная кнопка (● запись / ⌨ клавиши), название, M, S, FX, ⋯; мини-вид; громкость и панорама. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/panel"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/rowMain"
+            style="@style/Btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/btn_rec"
+            android:padding="0dp"
+            android:textColor="#FFFFFFFF"
+            android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/rowName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/text"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/rowInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/dim"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <Button android:id="@+id/rowMute" style="@style/Btn" android:layout_width="38dp" android:layout_height="40dp" android:minHeight="40dp" android:minWidth="38dp" android:padding="0dp" android:text="M" android:textSize="14sp" />
+        <Button android:id="@+id/rowSolo" style="@style/Btn" android:layout_width="38dp" android:layout_height="40dp" android:layout_marginLeft="4dp" android:minHeight="40dp" android:minWidth="38dp" android:padding="0dp" android:text="S" android:textSize="14sp" />
+        <Button android:id="@+id/rowFx" style="@style/Btn" android:layout_width="46dp" android:layout_height="40dp" android:layout_marginLeft="4dp" android:minHeight="40dp" android:minWidth="46dp" android:padding="0dp" android:text="FX" android:textSize="13sp" />
+        <Button android:id="@+id/rowMore" style="@style/Btn" android:layout_width="36dp" android:layout_height="40dp" android:layout_marginLeft="4dp" android:background="@android:color/transparent" android:minHeight="40dp" android:minWidth="36dp" android:padding="0dp" android:text="⋯" android:textSize="18sp" />
+    </LinearLayout>
+
+    <com.domovoi4ik.symphony.ui.TrackView
+        android:id="@+id/rowView"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="6dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Гр." android:textColor="@color/dim" android:textSize="12sp" />
+        <SeekBar android:id="@+id/rowVolume" android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1.3" android:max="100" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Пан." android:textColor="@color/dim" android:textSize="12sp" />
+        <SeekBar android:id="@+id/rowPan" android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1" android:max="200" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- «Симфония» 2 — главный экран (вертикальный). Разработчик и владелец: domovoi4ik. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="4dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="serif"
+            android:text="@string/app_name"
+            android:textColor="@color/text"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/btnMenu"
+            style="@style/Btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Меню"
+            android:text="@string/menu"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <!-- Транспорт -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/panel"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="1.1"
+                    android:textColor="@color/accent"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="00:00.0 / 00:00.0"
+                    android:textColor="@color/dim"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <Button android:id="@+id/btnRewind" style="@style/Btn" android:layout_width="52dp" android:layout_height="48dp" android:contentDescription="В начало" android:text="@string/rewind" />
+            <Button android:id="@+id/btnPlay" style="@style/Btn" android:layout_width="68dp" android:layout_height="48dp" android:layout_marginLeft="8dp" android:contentDescription="Воспроизвести" android:text="@string/play" android:textSize="20sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+            <Button android:id="@+id/btnTempo" style="@style/Btn" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1.2" android:minHeight="40dp" android:textSize="14sp" />
+            <Button android:id="@+id/btnMetro" style="@style/Btn" android:layout_width="0dp" android:layout_height="40dp" android:layout_marginLeft="6dp" android:layout_weight="1.2" android:minHeight="40dp" android:text="♩ Метроном" android:textSize="14sp" />
+            <Button android:id="@+id/btnMaster" style="@style/Btn" android:layout_width="0dp" android:layout_height="40dp" android:layout_marginLeft="6dp" android:layout_weight="1" android:minHeight="40dp" android:text="Мастер" android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="8dp">
+            <LinearLayout
+                android:id="@+id/tracks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <Button android:id="@+id/btnAddAudio" style="@style/Btn" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:text="+ Аудио (микрофон)" android:textSize="14sp" />
+                <Button android:id="@+id/btnAddInstr" style="@style/Btn" android:layout_width="0dp" android:layout_height="44dp" android:layout_marginLeft="8dp" android:layout_weight="1" android:text="+ Инструмент (MIDI)" android:textSize="14sp" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tvTip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/headphones_tip"
+                android:textColor="@color/dim"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="6dp">
+        <Button
+            android:id="@+id/btnExport"
+            style="@style/Btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_accent"
+            android:text="@string/export"
+            android:textColor="#FF1A1408"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/btnAd"
+            style="@style/Btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textSize="13sp" />
+        <Button
+            android:id="@+id/btnPrivacy"
+            style="@style/Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/transparent"
+            android:minHeight="36dp"
+            android:text="@string/privacy"
+            android:textColor="@color/dim"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>

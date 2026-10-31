@@ -1,0 +1,68 @@
+// «Симфония». Исходники общие с build.sh: ../src, ../android/res. Реклама — только здесь: ../ads/src.
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.domovoi4ik.symphony'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'com.domovoi4ik.symphony'
+        minSdk 24
+        targetSdk 36
+        versionCode 2
+        versionName '2.0.0'
+    }
+
+    buildFeatures { buildConfig true }
+
+    // Ключ: signing/symphony-release.jks + пароль в переменной KS_PASS (на GitHub — секреты, см. README).
+    // Нет ключа — release подписывается отладочным ключом: ставится на телефон, но не для магазина.
+    def ksFile = file('../signing/symphony-release.jks')
+    def ksPass = System.getenv('KS_PASS')
+    def hasKey = ksFile.exists() && ksPass
+    signingConfigs {
+        release {
+            if (hasKey) {
+                storeFile ksFile
+                storePassword ksPass
+                keyAlias 'symphony'
+                keyPassword ksPass
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            // Тестовые блоки Яндекса: реклама приходит всегда, деньги не начисляются.
+            buildConfigField 'String', 'AD_REWARDED_ID', '"demo-rewarded-yandex"'
+            buildConfigField 'String', 'AD_APP_OPEN_ID', '"demo-appopenad-yandex"'
+        }
+        release {
+            buildConfigField 'String', 'AD_REWARDED_ID', '"R-M-20314265-2"'
+            buildConfigField 'String', 'AD_APP_OPEN_ID', '"R-M-20314265-3"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig hasKey ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['../src', '../ads/src']
+            res.srcDirs = ['../android/res']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // Последняя ветка 7.x (API как в 7.1.0). В 8.x другой API — не обновляйте без правки YandexAds.java.
+    implementation 'com.yandex.android:mobileads:7.18.7'
+}

@@ -1,0 +1,19 @@
+// «Симфония» — сборка С рекламой Yandex Mobile Ads (Android Studio / Gradle).
+// Сборка без рекламы: ./build.sh
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()        // AndroidX / Play Services (рекламный ID) — зависимости SDK
+        mavenCentral()  // com.yandex.android:mobileads
+    }
+}
+rootProject.name = "Simfoniya"
+include ':app'
+project(':app').projectDir = new File(rootDir, 'gradle-app')

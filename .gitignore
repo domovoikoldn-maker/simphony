@@ -1,0 +1,10 @@
+build/
+dist/
+gradle-app/build/
+.gradle/
+local.properties
+env.local.sh
+*.iml
+.idea/
+# КЛЮЧ ПОДПИСИ — НИКОГДА не в репозиторий (на GitHub — через секреты)
+signing/

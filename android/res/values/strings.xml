@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Симфония</string>
+    <string name="developer">domovoi4ik</string>
+    <string name="contact">domovoikold@gmail.com</string>
+    <string name="privacy_url">https://judicious-guide-efe.notion.site/4093c4d19f2e805bbbafe6652db34f51</string>
+
+    <string name="play">▶</string>
+    <string name="stop">■</string>
+    <string name="rewind">⏮</string>
+    <string name="rec">●</string>
+    <string name="rec_stop">■</string>
+    <string name="mute">M</string>
+    <string name="delete">✕</string>
+    <string name="export">Экспорт WAV</string>
+    <string name="privacy">Конфиденциальность</string>
+    <string name="menu">⋮</string>
+    <string name="empty_track">пусто — нажмите ●</string>
+    <string name="headphones_tip">Голос записывайте в наушниках: остальные дорожки и метроном звучат во время записи. Запись идёт с позиции курсора.</string>
+</resources>

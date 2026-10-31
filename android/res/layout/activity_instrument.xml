@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Экран инструмента (горизонтальный): панель, пиано-ролл, клавиатура. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:id="@+id/bar"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp">
+            <Button android:id="@+id/iBack" style="@style/Btn" android:layout_width="44dp" android:layout_height="40dp" android:minHeight="40dp" android:background="@android:color/transparent" android:text="←" android:contentDescription="Назад" />
+            <Button android:id="@+id/iInstr" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="40dp" android:minHeight="40dp" android:textSize="14sp" />
+            <Button android:id="@+id/iPlay" style="@style/Btn" android:layout_width="52dp" android:layout_height="40dp" android:layout_marginLeft="6dp" android:minHeight="40dp" android:text="▶" android:contentDescription="Воспроизвести" />
+            <Button android:id="@+id/iRec" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginLeft="4dp" android:minHeight="40dp" android:text="● Запись нот" android:textColor="@color/rec" android:textSize="14sp" />
+            <Button android:id="@+id/iUndo" style="@style/Btn" android:layout_width="44dp" android:layout_height="40dp" android:layout_marginLeft="4dp" android:minHeight="40dp" android:text="↶" android:contentDescription="Отменить" />
+            <Button android:id="@+id/iGrid" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginLeft="4dp" android:minHeight="40dp" android:textSize="13sp" />
+            <Button android:id="@+id/iMetro" style="@style/Btn" android:layout_width="44dp" android:layout_height="40dp" android:layout_marginLeft="4dp" android:minHeight="40dp" android:text="♩" android:contentDescription="Метроном" />
+            <Button android:id="@+id/iOctDown" style="@style/Btn" android:layout_width="44dp" android:layout_height="40dp" android:layout_marginLeft="10dp" android:minHeight="40dp" android:text="◀" android:contentDescription="Октава ниже" />
+            <TextView android:id="@+id/iOct" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="6dp" android:paddingRight="6dp" android:fontFamily="monospace" android:textColor="@color/text" android:textSize="13sp" />
+            <Button android:id="@+id/iOctUp" style="@style/Btn" android:layout_width="44dp" android:layout_height="40dp" android:minHeight="40dp" android:text="▶" android:contentDescription="Октава выше" />
+            <Button android:id="@+id/iZoomOut" style="@style/Btn" android:layout_width="44dp" android:layout_height="40dp" android:layout_marginLeft="10dp" android:minHeight="40dp" android:text="−" android:contentDescription="Мельче" />
+            <Button android:id="@+id/iZoomIn" style="@style/Btn" android:layout_width="44dp" android:layout_height="40dp" android:layout_marginLeft="4dp" android:minHeight="40dp" android:text="+" android:contentDescription="Крупнее" />
+            <Button android:id="@+id/iFx" style="@style/Btn" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginLeft="10dp" android:minHeight="40dp" android:text="FX" android:textSize="14sp" />
+            <Button android:id="@+id/iMore" style="@style/Btn" android:layout_width="44dp" android:layout_height="40dp" android:layout_marginLeft="4dp" android:minHeight="40dp" android:background="@android:color/transparent" android:text="⋯" />
+            <TextView android:id="@+id/iStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="10dp" android:paddingRight="10dp" android:fontFamily="monospace" android:textColor="@color/dim" android:textSize="12sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <com.domovoi4ik.symphony.ui.PianoRollView
+        android:id="@+id/iRoll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.55" />
+
+    <com.domovoi4ik.symphony.ui.PianoKeyboardView
+        android:id="@+id/iKeys"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>
